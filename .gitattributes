@@ -1,19 +1,16 @@
 # 对所有文件禁用自动转换，由具体规则控制
 * text=auto
-
 # 明确指定文本文件使用LF
 *.py text eol=lf
 *.md text eol=lf
 *.txt text eol=lf
 *.sh text eol=lf
 *.json text eol=lf
-
 # 明确指定二进制文件
-*.pkl binary
+*.pkl filter=lfs diff=lfs merge=lfs -text
 *.jpg binary
 *.png binary
 *.pdf binary
-
 # 对配置文件禁用转换
 .gitattributes -text
 .gitignore -text
